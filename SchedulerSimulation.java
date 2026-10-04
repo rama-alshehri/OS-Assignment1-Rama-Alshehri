@@ -25,6 +25,8 @@ class Colors {
 
 // Class representing a process that implements Runnable to be run by a thread
 class Process implements Runnable {
+    private long waitingTime;
+    private long RQentryTime;
     private int priority;
     private String name; // Name of the process
     private int burstTime; // Total time the process requires to complete (in milliseconds)
@@ -147,6 +149,17 @@ class Process implements Runnable {
     public boolean isFinished() {
         return remainingTime <= 0;
     }
+    public long getwaitingTime() {
+        return waitingTime;
+    }
+    public void updateWaitingTime() {
+    waitingTime += System.currentTimeMillis() - RQentryTime;
+}
+
+
+    public void enterRQ(){
+        RQentryTime = System.currentTimeMillis();
+    }
 }
 
 public class SchedulerSimulation {
@@ -257,6 +270,7 @@ public class SchedulerSimulation {
             
             // Retrieve the process associated with the thread from the map
             Process process = processMap.get(currentThread);
+            process.updateWaitingTime();
             
             // Check if the process is not finished
             if (!process.isFinished()) {
@@ -273,6 +287,20 @@ public class SchedulerSimulation {
                 }
             }
         }
+
+        System.out.println("\nProcess\tBurst Time\tWT\tTAT");
+        for(Process process: processMap.values()){
+            long turnaroundTime= process.getwaitingTime()+process.getBurstTime();
+            System.out.println(process.getName()+"\t" +
+            process.getBurstTime()+"\t\t"+
+            process.getwaitingTime()+"\t\t\t"+
+            turnaroundTime
+            );
+
+            
+        }
+
+
         System.out.println("Total context Switches = "+contextSwitchCounter);
         
         // End of the scheduler simulation
@@ -293,6 +321,8 @@ public class SchedulerSimulation {
                                         Map<Thread, Process> processMap) {
         // Create a new thread to run the process
         Thread thread = new Thread(process);
+
+        process.enterRQ();
         
         // Add the thread to the ready queue
         processQueue.add(thread);
