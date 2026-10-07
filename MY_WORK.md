@@ -29,11 +29,11 @@
 
 | Field | Your Answer |
 |-------|-------------|
-| **Full Name** | [Write your full name here] |
-| **Student ID** | [Write your student ID here] |
-| **University Email** | [yourid]@std.psau.edu.sa |
-| **GitHub Username** | [your-github-username] |
-| **Repository Link** | [Paste your repository link here] |
+| **Full Name** | [Rama saeed alshehri] |
+| **Student ID** | [446051375] |
+| **University Email** | [446051375]@std.psau.edu.sa |
+| **GitHub Username** | [rama-alshehri] |
+| **Repository Link** | [https://github.com/rama-alshehri/OS-Assignment1-Rama-Alshehri.git] |
  
 ---
 
@@ -129,68 +129,93 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
-**What I did**:
+### Entry 1 - [21-10-2026]
+**What I did**: I forked the repository then rename it and set up my ID 
 
 **Details**:
+ - Forked the starter repository and renamed it to my required repository name.
+ - Set my student ID in SchedulerSimulation.java.
+ - Checked the repository and remote connection using Git Bash
 
 **Challenges**:
+  use git bash to edit the code
 
 **Solution**:
+  I learned how to use basic Git Bash commands from youtupe
 
-**Time spent**:
+
+
+**Time spent**: about 2 hour
 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**:
+### Entry 2 - [21-10-2026]
+**What I did**: worked on the git bash and prepared the project for compilation.
 
 **Details**:
+ - Found that java and javac were not recognized in git bash
+ - checked the java is installed in netbeans
 
-**Challenges**:
+**Challenges**: git bash could not find javac
 
-**Solution**:
+**Solution**: Located the JDK inside the Apache NetBeans installation and configured the PATH in git bash
 
-**Time spent**:
+**Time spent**: about 1 hour
 
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**:
+### Entry 3 - [21-10-2026]
+**What I did**: implemented feature 1 process priority
 
 **Details**:
+- added priority to process class
+- generated a priority between 1 and 10
+- added a getter method 
+- test the code using javac and java.
+- add commit 1
 
 **Challenges**:
-
+- first received a compiler error because the prioity was not declared
 **Solution**:
+- added int priority =1 + random.nextInt(10); before creating the process.
 
-**Time spent**:
+**Time spent**: about 1 hour
 
 ---
 
-### Entry 4 - [Date and Time]
-**What I did**:
+### Entry 4 - [22-10-2026]
+**What I did**: implemented feature  2: Context Switch Counter.
 
-**Details**:
+**Details**: 
+- add static contextSwitchCount variable.
+- incremented it before currentThread.start().
+- add the total context switch count to the final output.
+- test the code using javac and java.
 
-**Challenges**:
+**Challenges**: i faced a proplem where the counter should incremented
 
-**Solution**:
+**Solution**: I placed the increment  before currentThread.start()
 
-**Time spent**:
+**Time spent**: about 45 m
 
 ---
 
-### Entry 5 - [Date and Time]
-**What I did**:
+### Entry 5 - [23-10-2026]
+**What I did**:implemented feature 3: Waiting Time Tracking.
 
 **Details**:
+- add waiting-time variables to the Process class
+- used System.currentTimeMillis() to measure waiting time
+- Calculated turnaround time using waiting time plus burst time
+- Added the final process as table
 
-**Challenges**:
+**Challenges**: 
+- understand when the waiting-time measurement should start and stop 
 
 **Solution**:
+- started timing when a process entered the ready queue and stopped timing when it was removed
 
-**Time spent**:
+**Time spent**: about 45 m
 
 ---
 
@@ -211,13 +236,13 @@
 
 > 💡 **TIP:** Fill this in **last**, after all entries are written.
 
-**Total time spent on assignment**: [X hours]
+**Total time spent on assignment**: [7 hours]
 
-**Most challenging part**:
+**Most challenging part**: part 2
 
-**Most interesting learning**:
+**Most interesting learning**: I learned how a simulated process can be represented by a java
 
-**What I would do differently next time**:
+**What I would do differently next time**: I would use VS instead of git bash
 
 ---
 
@@ -237,7 +262,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I learned that multithreading enabels the program manage diffrent process,In this assignment, the Process class implements Runnable. In the assignment, we used Java Thread to execute each process. We used Thread.start() to begin the execution of a thread. The main thread uses Thread.join() to wait for child threads to complete. I used Thread.sleep() to simulate the amount of time that a process uses the CPU.]
 
 ## Question 2: What was the most challenging part of this assignment?
 
@@ -245,7 +270,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[The challenging part was setting up the Java environment to work within Git Bash; when I attempted to compile the program for the first time after implementing the initial feature, Git Bash reported that Java was unrecognized. I had to locate the JDK within the Apache NetBeans installation folder and correctly configure the PATH variable. After testing the first feature and encountering an error, I realized the importance of compiling the code after every minor modification; this practice facilitated early error detection and debugging, as I learned how to interpret compiler error messages and pinpoint the exact line causing the issue..]
 
 ## Question 3: How did you overcome the challenges you faced?
 
@@ -253,7 +278,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I overcome the challenges by testing the code after evry change i did insted of testing whole the code at onse,when java was not defined at git bash i checked netbeans and then configured the JDK path in git bash,When the priority feature produced a compiler error, I read the error message and saw that the priority variable had not been declared. then i added the variable before the Process object then i tested agin.]
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
@@ -261,7 +286,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+Multithreading is useful in many applications because a program can handle different tasks for ex. the university website can use threads to handle different studints interactions and background tasks, threads also enable music abbs play audio while the user browses the application.]
 
 ### Optional: What would you like to learn more about?
 
@@ -293,7 +318,12 @@
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[ Process class implements Runnable so each process can be executed by a Java Thread. program creates a thread using new Thread(process) and starts it using currentThread.start(). Calling start()  Java execute run() method through the thread, calling run() directly would not create a new thread. In this assignment, threads are used to simulate the execution of CPU processes.
+
+Example from my code:
+Thread thread = new Thread(process);
+thread.start();]
+
 
 ## Question 2: Ready Queue Behavior
 
@@ -305,15 +335,29 @@
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[In Round-Robin scheduling, if a process does not end within its time quantum, it is added to the end of the ready queue This allows the processes in the queue to receive CPU time before the same process runs again and help to minmized waiting time.]
 
 Example from my output:
 ```
-[Paste a relevant snippet from your program output here showing a process being re-queued]
+
+[  P1 executing quantum [5000ms] 
+   Quantum progress: [???????????????] 100%
+   P1 completed quantum 5000ms ? Overall progress: [????????????????????] 99%
+     Remaining time: 11ms
+   P1 yields CPU for context switch
+
+  P1 added to ready queue ? Burst time: 5011ms ? priority: 6
+
+  P1 executing quantum [11ms] 
+   Quantum progress: [???????????????] 100%
+   P1 completed quantum 11ms ? Overall progress: [????????????????????] 100%
+     Remaining time: 0ms
+   P1 finished execution!
+]
 ```
 
 **Explanation of example:**
-[Explain what is happening in the output snippet you pasted.]
+[P1 could not finish during 5000 ms of time quantum because it still had 11 ms remaining. the scheduler added P1 to the end of the ready queue, allowing P2, P3, P4, and P5 to run first. P1 was re-queued once and then completed when it received its next turn.]
 
 ## Question 3: Thread Lifecycle
 
@@ -323,15 +367,15 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences overall; one short explanation per state)*
 
-1. **New**: [When is P1 in the New state?]
+1. **New**: [When is P1 in the New state?when the program creates its Thread object using new Thread(process) in addProcessToQueue()]
 
-2. **Runnable**: [When does P1 become Runnable?]
+2. **Runnable**: [When does P1 become Runnable?when currentThread.start() is called]
 
-3. **Running**: [When is P1 Running?]
+3. **Running**: [When is P1 Running?when the JVM actually executes its run() method]
 
-4. **Waiting**: [When and why would a thread be Waiting?]
+4. **Waiting**: [When and why would a thread be Waiting?when Thread.sleep() is executed inside run(), while the main scheduler thread waits for P1 using currentThread.join()]
 
-5. **Terminated**: [When is P1 Terminated?]
+5. **Terminated**: [When is P1 Terminated?after its run() method finishes and the thread completes its execution.]
 
 ## Question 4: Real-World Applications
 
@@ -341,32 +385,34 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences per example)*
 
-### Example 1 (operating-system level): [Name of scenario]
+### Example 1 (operating-system level): [Operating System CPU Scheduling]
 
 **Description**:
-[Describe the real-world scenario.]
+[operating system use Round-Robin scheduling to share CPU time among multiple processes that are ready to run. Each have a fixed time quantum. When the quantum expires, the process can be moved to the end of the ready queue and another process gets CPU time.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[Fairness, responsiveness, predictability?
+provides fairness because every ready process gets an opportunity to use the CPU. It also improves responsiveness because a process does not have to wait for another process to finish completely before getting CPU time. Context switches allow the operating system to move between processes]
 
 ### Example 2: [Name of application/scenario]
 
 **Description**:
-[Describe the real-world scenario or application.]
+[A server handling multiple client requests use threads so that different requests can receive processing time. Each request can be as a task, while the time quantum represents the maximum amount of CPU time given totask before another task gets a turn.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[Fairness, responsiveness, predictability?
+Round-Robin can provide fair CPU access. It can improve responsiveness because one long-running task takes many CPU time while other tasks are waiting. Context switching allows the system to move between different tasks.]
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1.
-2.
-3.
+1. Round-Robin gives process a fixed time quantum for each one and re-queues unfinished processes
+2. A Java thread moves through different cycle states while the simulation is running.
+3. Fair scheduling improves responsiveness by giving multiple processes opportunities to use the CPU.
 
 **Concepts I need to study more:**
-1.
-2.
+1. the difference between join() and sleep().
+2. context switching and CPU scheduling in a real operating systems.
 
 ---
 
